@@ -19,7 +19,10 @@ let s: string;
 
 s = cldr.Numbers.formatCurrency('1234.5678', 'USD');
 console.log(s);
+// "$1,234.57"
 
-// If a currency code is missing from the schema, you'll see missing symbols.
+// If a currency code is used that was not configured,
+// you'll see missing symbols.
 s = cldr.Numbers.formatCurrency('1234.5678', 'PTE');
 console.log(s);
+// " 1,234.57"
