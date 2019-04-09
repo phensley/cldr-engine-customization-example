@@ -7,6 +7,8 @@ This lets you generate more compact resource packs, including only the data you 
 
 **EXPERIMENTAL** The API for customizing [cldr-engine](https://github.com/phensley/cldr-engine) via the `@phensley/cldr-core` package is new and therefore may not be as stable as importing the full `@phensley/cldr` library.
 
+**NOTE** Since the library uses the confiugration to generate resource packs and create runtime schema linkage, the resource packs are fitted to the configuration. **Anytime the configuration is changed the resource packs MUST be regenerated.** Failure to do so will result in unpredictable behavior.
+
 ## Overview
 
 The `@phensley/cldr-schema` package is used to both (1) generate resource packs and (2) build an accessor object at runtime that lets you fetch values from resource packs in a typesafe way.  The library uses a series of "key indices" which contain the identifiers used to index and encode the data in the resource pack.
