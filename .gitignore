@@ -1,8 +1,10 @@
 *.swp
+/.yo-rc.json
 
 /yarn.lock
 /yarn-error.log
 
+/dist/
 /lib/
 /node_modules/
 /packs/
