@@ -3,7 +3,6 @@
   "language-id": ["en", "es", "fr", "de", "pt", "it"],
   "script-id": ["Latn"],
   "currency-id": ["USD", "EUR", "GBP", "JPY", "CAD"],
-	"timezone-id": [],
   "number-system-name": ["latn"],
   "region-id": [
     "001",
