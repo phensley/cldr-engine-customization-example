@@ -1,0 +1,21 @@
+{
+  "name": "cldr-engine-customization-example",
+  "version": "1.0.0",
+  "description": "Example of customizing the cldr-engine library",
+  "main": "lib/index.js",
+  "author": "Patrick Hensley <pathensley@gmail.com>",
+  "license": "Apache 2.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "packs": "cldr-compiler pack -o ./packs -c ./src/config.json"
+  },
+  "devDependencies": {
+    "@phensley/cldr-compiler": "^0.12.1",
+    "@types/node": "^11.13.2",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "@phensley/cldr-core": "^0.12.1"
+  }
+}
