@@ -4,6 +4,7 @@
 Demonstrates configuring the [`@phensley/cldr`](https://www.npmjs.com/package/@phensley/cldr) library, specifying which identifiers your application requires.
 This lets you generate more compact resource packs, including only the data you need.
 
+Not every attribute in the resource pack can be made optional. The library currently relies on some types of data always being present. Over time more data may become configurable / optional.
 
 **EXPERIMENTAL** The API for customizing [cldr-engine](https://github.com/phensley/cldr-engine) via the `@phensley/cldr-core` package is new and therefore may not be as stable as importing the full `@phensley/cldr` library.
 
