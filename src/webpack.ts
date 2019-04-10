@@ -1,4 +1,4 @@
-import { CLDRFramework } from "@phensley/cldr-core";
+import { CLDRFramework, Quantity, RegionIdType } from "@phensley/cldr-core";
 import * as config from './config.json';
 
 // statically embed languages
@@ -30,19 +30,22 @@ const framework = new CLDRFramework({
 });
 
 export const main = () => {
-  for (const lang of ['en', 'es']) {
-    const cldr = framework.get(lang);
+  const locales = ['en-GB', 'es-419', 'fr-CA', 'de-AT'];
+  for (const locale of locales) {
+    const cldr = framework.get(locale);
     let s: string;
 
-    s = cldr.Numbers.formatCurrency('1234.5678', 'USD');
-    console.log(s);
-    // "$1,234.57"
+    const { tag } = cldr.General.locale();
+    console.log(`Hello, visitor from ${cldr.General.getRegionDisplayName(tag.region() as RegionIdType)}`);
 
-    // If a currency code is used that was not configured,
-    // you'll see missing symbols.
-    s = cldr.Numbers.formatCurrency('1234.5678', 'PTE');
-    console.log(s);
-    // " 1,234.57"
+    const total = Math.random() * 99999;
+    s = cldr.Numbers.formatCurrency(total, 'USD');
+    console.log(`Your total is ${s}`);
+
+    const qty: Quantity = { value: Math.random() * 1000, unit: 'megabyte' };
+    console.log(`You've used ${cldr.Units.formatQuantity(qty)}`);
+
+    console.log();
   }
 };
 
