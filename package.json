@@ -7,8 +7,9 @@
   "license": "Apache 2.0",
   "private": true,
   "scripts": {
+    "binjs": "binjs_encode -i ./dist/main*.js -o dist/binjs && gzip -k dist/binjs/main.binjs",
+    "build": "rimraf dist lib && tsc && webpack --mode production",
     "clean": "rimraf dist lib",
-    "build": "tsc && webpack --mode production",
     "packs": "cldr-compiler pack -o ./packs -c ./src/config.json"
   },
   "devDependencies": {
