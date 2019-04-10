@@ -23,6 +23,7 @@ const path = require('path');
  */
 
 const CompressionPlugin = require('compression-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
@@ -60,7 +61,8 @@ module.exports = {
 	},
 
   plugins: [
-    new CompressionPlugin()
+    new CompressionPlugin(),
+    new HtmlWebpackPlugin()
   ],
 
 	mode: 'development',
@@ -68,7 +70,8 @@ module.exports = {
 	optimization: {
     minimizer: [
       new UglifyJSPlugin({
-        extractComments: 'all'
+        extractComments: 'all',
+        sourceMap: true
       })
     ],
 		splitChunks: {
