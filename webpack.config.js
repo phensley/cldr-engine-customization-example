@@ -62,7 +62,9 @@ module.exports = {
 
   plugins: [
     new CompressionPlugin(),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
   ],
 
 	mode: 'development',
