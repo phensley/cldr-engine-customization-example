@@ -66,6 +66,11 @@ module.exports = {
 	mode: 'development',
 
 	optimization: {
+    minimizer: [
+      new UglifyJSPlugin({
+        extractComments: 'all'
+      })
+    ],
 		splitChunks: {
 			cacheGroups: {
 				vendors: {
