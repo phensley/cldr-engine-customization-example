@@ -25,7 +25,7 @@
   "script-id": ["Latn"],
   "timezone-id": [],
   "unit-id": [
-		"bit", "kilobit", "megabit", "terabit", "petabit",
+		"bit", "kilobit", "megabit", "terabit",
 		"byte", "kilobyte", "megabyte", "terabyte", "petabyte"
   ]
 }
